@@ -13,7 +13,7 @@
         if (d > 0.0) Some(math.log(d)) else None
 
     // Extension methods define opaque types' public APIs
-    given logarithmOps: with
+    given logarithmOps: extension with
       def (x: Logarithm) toDouble: Double = math.exp(x)
       def (x: Logarithm) + (y: Logarithm): Logarithm = Logarithm(math.exp(x) + math.exp(y))
       def (x: Logarithm) * (y: Logarithm): Logarithm = Logarithm(x + y)
